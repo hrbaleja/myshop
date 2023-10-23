@@ -16,7 +16,7 @@ const GlassAppBar = styled(AppBar)(({ theme }) => ({
 
 const StyledDrawer = styled(Drawer)(({ theme }) => ({
   '& .MuiPaper-root': {
-    backgroundColor: 'rgba(248, 235, 195, 1)',
+    // backgroundColor: 'rgba(248, 235, 195, 1)',
     backdropFilter: 'blur(10px)',
     borderRight: `1px solid ${theme.palette.divider}`,
     width: '250px',
@@ -47,11 +47,11 @@ function Header() {
           <Box display="flex" alignItems="center" justifyContent="space-between" width="100%">
             <Box display="flex" alignItems="center">
               <img src={Logo} alt="Logo" height="50" style={{ marginRight: '8px' }} />
-              <Typography variant="h4"  style={{fontWeight:'800', color:'#1769aa'}}>
+              <Typography variant="h4"  style={{fontWeight:'800', color:'navy'}}>
                 Hennessy Store
               </Typography>
             </Box>
-            <Box display={{ xs: 'none', md: 'flex' }}>
+            <Box display={{ xs: 'none', md: 'flex'  }} sx={{color:'navy'}}>
               <NavLink to="/">Home</NavLink>
               <NavLink to="/product">Product</NavLink>
               <NavLink to="/packing">Packing</NavLink>
@@ -73,9 +73,9 @@ function Header() {
         </Toolbar>
       </GlassAppBar>
 
-      <StyledDrawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer}>
-        <List>
-        <ListItem  style={{cursor:"pointer"}} onClick={toggleDrawer}>
+      <StyledDrawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer} >
+        <List style={{color:'navy'}}>
+        <ListItem  style={{cursor:"pointer", color:'navy'}} onClick={toggleDrawer}>
             <ListItemText   primary="X" />
           </ListItem>
           <ListItem button component={NavLink} to="/" active={location.pathname === '/'} onClick={toggleDrawer}>

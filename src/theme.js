@@ -22,6 +22,7 @@ const generateTheme = (darkMode) => {
     // Other theme options like typography, spacing, etc.
     typography: {
       fontFamily: 'Arial, sans-serif',
+      allVariants: { color: 'navy' },
     },
     spacing: 8,
   });

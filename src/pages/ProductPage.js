@@ -4,7 +4,7 @@ import ProductGrid from '../components/product/ProductGrid';
 
 const ProductPage = () => {
   return (
-    <Container>
+    <Container >
         <ProductGrid/>
     </Container>
   );

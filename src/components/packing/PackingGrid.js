@@ -50,7 +50,7 @@ const PackingGrid = () => {
                   borderRadius: '10px',
                 }}
               />
-              <Typography variant="h6" gutterBottom>
+              <Typography variant="h6" gutterBottom  sx={{color:'navy'}}>
                 {packing.name}
               </Typography>
               <Typography variant="h6" color="primary">

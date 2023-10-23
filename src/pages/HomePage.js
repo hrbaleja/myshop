@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Container, Button } from '@mui/material';
+import { Typography, Container, } from '@mui/material';
 import HeroImage from '../components/home/HeroImage';
 
 import ProductCarousel from '../components/home/ProductCarousel';

@@ -24,9 +24,7 @@ const AppContainer = styled('div')(({ theme }) => ({
   padding: theme.spacing(2),
   fontFamily:' Inter',
   fontWeight:'bold',
-  color:'#000000'
-
-
+  color:'navy'
 }));
 
 function App() {
