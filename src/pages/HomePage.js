@@ -17,7 +17,7 @@ const HomePage = () => {
       <br></br>
 
       <br></br>
-      <Typography variant="h4" gutterBottom>
+      {/* <Typography variant="h4" gutterBottom>
         Welcome to My Website
       </Typography>
       <Typography variant="body1">
@@ -26,7 +26,7 @@ const HomePage = () => {
       </Typography>
       <Button variant="contained" color="primary" style={{ marginTop: '16px' }}>
         Learn More
-      </Button>
+      </Button> */}
 
     </Container>
   );

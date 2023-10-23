@@ -7,13 +7,12 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 const Footer = () => {
   return (
     <footer style={{
-       backdropFilter: 'blur(20px)',
-      'WebkitBackdropFilter': 'blur(20px)', 
+      backdropFilter: 'blur(20px)',
+      'WebkitBackdropFilter': 'blur(20px)',
       color: '#000000', padding: '2rem 0', borderRadius: '10px',
-       border: '1px solid rgba(255, 255, 255, 0.18)'
+      border: '1px solid rgba(255, 255, 255, 0.18)'
     }}>
 
-      
       <Container maxWidth="lg">
         <Grid container spacing={3} justifyContent="space-between">
           <Grid item xs={12} sm={6} md={3}>
@@ -59,20 +58,29 @@ const Footer = () => {
               Contact
             </Typography>
             <Typography variant="body2" component="p" gutterBottom>
-              123 Main Street, City, Country
+              Mysha-Enterprise            </Typography>
+            <Typography variant="body2" component="p" gutterBottom>
+            81, Shyam-3, Industrial Hub,
             </Typography>
             <Typography variant="body2" component="p" gutterBottom>
-              Phone: 123-456-7890
+              B/h Pachratana Industrial Estate,
             </Typography>
             <Typography variant="body2" component="p" gutterBottom>
-              Email: info@example.com
+              Changodar, Ahmedabad-382213
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="body2" align="right">
-              &copy; 2023 Hennessy . All rights reserved.
+            <Typography variant="body2" component="p" gutterBottom>
+              Phone: <a href="tel:+919157897526" >+91 9157897526</a>
+            </Typography>
+            <Typography variant="body2" component="p" gutterBottom>
+              Email: <a href="mailto:info@example.com">info@example.com</a>
+            </Typography>
+            <Typography variant="body2" align="left" color="blue">
+              &copy; 2023 Hennessy. All rights reserved.
             </Typography>
           </Grid>
+
         </Grid>
       </Container>
     </footer>
