@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Grid, Paper, Typography, Button, TextField, CircularProgress, InputLabel, styled, Box, FormControl, Select, MenuItem, InputAdornment, IconButton,  } from '@mui/material';
+import { Grid, Paper, Typography, Button, TextField, CircularProgress, InputLabel, styled, Box, FormControl, Select, MenuItem, InputAdornment, IconButton, } from '@mui/material';
 import { Search } from '@mui/icons-material';
 import { WhatsappShareButton } from 'react-share';
 import { Link } from 'react-router-dom';
@@ -16,13 +16,13 @@ const handleWhatsAppClick = (productName) => {
 
 const useStyles = styled((theme) => ({
   productCard: {
-    
+
     padding: theme.spacing(2),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     height: '100%',
-    
+
     transition: 'transform 0.3s ease-in-out',
     '&:hover': {
       transform: 'scale(1.05)',
@@ -90,12 +90,12 @@ const ProductGrid = () => {
   };
 
   return (
-    <Box p={2} style={{color:'navy'}}>
+    <Box p={2} style={{ color: 'navy' }}>
       <Grid container spacing={2}>
         <Grid container spacing={2} mt={0} mb={2}>
           <Grid item xs={12} sm={4}>
             <FormControl fullWidth>
-              <TextField sx={{color:'navy'}}
+              <TextField sx={{ color: 'navy' }}
                 fullWidth
                 label="Search by Name"
                 // color='navy'
@@ -113,23 +113,23 @@ const ProductGrid = () => {
             </FormControl>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <FormControl fullWidth  sx={{color:'navy'}}>
-              <InputLabel  sx={{color:'navy'}}>Sort By</InputLabel>
-              <Select value={sortOrder} label="Sort By" onChange={(e) => sortProducts(e.target.value)}  sx={{color:'navy'}}>
-                <MenuItem value="Relevance"  sx={{color:'navy'}}>Relevance</MenuItem>
-                <MenuItem value="Low to High"  sx={{color:'navy'}}>Price: Low to High</MenuItem>
-                <MenuItem value="High to Low"  sx={{color:'navy'}}>Price: High to Low</MenuItem>
+            <FormControl fullWidth sx={{ color: 'navy' }}>
+              <InputLabel sx={{ color: 'navy' }}>Sort By</InputLabel>
+              <Select value={sortOrder} label="Sort By" onChange={(e) => sortProducts(e.target.value)} sx={{ color: 'navy' }}>
+                <MenuItem value="Relevance" sx={{ color: 'navy' }}>Relevance</MenuItem>
+                <MenuItem value="Low to High" sx={{ color: 'navy' }}>Price: Low to High</MenuItem>
+                <MenuItem value="High to Low" sx={{ color: 'navy' }}>Price: High to Low</MenuItem>
               </Select>
             </FormControl>
           </Grid>
 
           <Grid item xs={12} sm={4}>
             <FormControl fullWidth>
-              <InputLabel  sx={{color:'navy'}}>Categories</InputLabel>
-              <Select value={selectedCategory} label="Categories" onChange={(e) => filterProductsByCategory(e.target.value)}  sx={{color:'navy'}}>
-                <MenuItem value="All Categories"  sx={{color:'navy'}}>All Categories</MenuItem>
+              <InputLabel sx={{ color: 'navy' }}>Categories</InputLabel>
+              <Select value={selectedCategory} label="Categories" onChange={(e) => filterProductsByCategory(e.target.value)} sx={{ color: 'navy' }}>
+                <MenuItem value="All Categories" sx={{ color: 'navy' }}>All Categories</MenuItem>
                 {categories.map((category) => (
-                  <MenuItem key={category._id} value={category.name}  sx={{color:'navy'}}>
+                  <MenuItem key={category._id} value={category.name} sx={{ color: 'navy' }}>
                     {category.name}
                   </MenuItem>
                 ))}
@@ -187,14 +187,14 @@ const ProductGrid = () => {
                       borderRadius: '10px',
                     }}
                   />
-                  <Typography variant="p" gutterBottom  sx={{color:'5f1000', fontWeight:'600'}} noWrap>
+                  <Typography variant="p" gutterBottom sx={{ color: '5f1000', fontWeight: '600' }} noWrap>
                     {product.name}
                   </Typography>
                   <Box sx={{ margin: ' 0 1rem 1rem 0', display: 'flex', justifyContent: 'space-between' }}>
                     <Typography variant="contained" color="textSecondary" >
                       {product.category.name}
                     </Typography>
-                    <Typography variant="contained" color="primary"  sx={{color:'5f1000', fontWeight:'600'}}>
+                    <Typography variant="contained" color="primary" sx={{ color: '5f1000', fontWeight: '600' }}>
                       ₹{product.price.toFixed(2)}
                     </Typography>
                   </Box>

@@ -12,32 +12,28 @@ const DivContainer = styled('div')(({ theme }) => ({
 }));
 
 function Carousel({ product }) {
-
-    const { name, description, image, _id } = product;
+    const { name, image, _id } = product;
     return (
         <DivContainer>
             <Box elevation={3}>
                 <Grid container spacing={3} sx={{ marginRight: '1rem', display: 'flex' }}>
                     <Grid sx={{ margin: '0 20px' }}>
                         <img
-                         src={`https://mychocolate-api.vercel.app/api/v1/uploads/get-image/${image}`}
+                            src={`https://mychocolate-api.vercel.app/api/v1/uploads/get-image/${image}`}
                             alt={name}
                             style={{ width: '100%', maxWidth: 200, }}
                         />
                     </Grid>
                     <Grid item xs={12} md={6} sx={{ margin: '0 20px' }}>
-                        <Typography variant="h4" component="h1" >
+                        <Typography variant="h6" component="h6" >
                             {name}
                         </Typography>
-                        <Typography variant="h6" component="h5">
-                            {description}
-                        </Typography>
                         <Link to={`/product/${_id}`} style={{ textDecoration: 'none' }}>
-                        <Button variant="contained" style={{ margin: '10px 0', color: "#FFFFFF", backgroundColor: '#792b0f' }}>
-                            View Product
-                        </Button>
+                            <Button variant="contained" style={{ margin: '10px 0', color: "#FFFFFF", backgroundColor: '#792b0f' }}>
+                                View Product
+                            </Button>
                         </Link>
-                       
+
                     </Grid>
                 </Grid>
             </Box>

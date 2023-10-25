@@ -42,7 +42,7 @@ const PackingGrid = () => {
               }}
             >
               <img
-                src={'https://mychocolate-api.vercel.app/api/v1/uploads/get-image/image-1697348557245.png'}
+                src={'https://mychocolate-api.vercel.app/api/v1/uploads/get-image/image-1698233916426.png'}
                 alt={packing.name}
                 style={{
                   objectFit: 'cover',
