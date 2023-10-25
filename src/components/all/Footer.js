@@ -3,15 +3,24 @@ import { Typography, Container, Grid, IconButton, Link } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import PhoneIcon from '@mui/icons-material/Phone';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 const Footer = () => {
+
+
+
   return (
-    <footer style={{
-      backdropFilter: 'blur(20px)',
-      'WebkitBackdropFilter': 'blur(20px)',
-      color: '#000000', padding: '2rem 0', borderRadius: '10px',
-      border: '1px solid rgba(255, 255, 255, 0.18)'
-    }}>
+    <footer style={
+      {
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        color: '#5f1000',
+        boxShadow: '0 -6px 6px rgba(0, 0, 0, 0.1)',
+        margin:'1rem 0'
+      }
+
+    }>
 
       <Container maxWidth="lg">
         <Grid container spacing={3} justifyContent="space-between">
@@ -60,7 +69,7 @@ const Footer = () => {
             <Typography variant="body2" component="p" gutterBottom>
               Mysha-Enterprise            </Typography>
             <Typography variant="body2" component="p" gutterBottom>
-            81, Shyam-3, Industrial Hub,
+              81, Shyam-3, Industrial Hub,
             </Typography>
             <Typography variant="body2" component="p" gutterBottom>
               B/h Pachratana Industrial Estate,
@@ -70,13 +79,21 @@ const Footer = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="body2" component="p" gutterBottom>
-              Phone: <a href="tel:+919157897526" >+91 9157897526</a>
+            <Typography variant="h6" component="h6" gutterBottom>
+              {'\u00A0'} {/* Non-breaking space */}
             </Typography>
-            <Typography variant="body2" component="p" gutterBottom>
-              Email: <a href="mailto:info@example.com">info@example.com</a>
+
+            <Typography variant="body1" component="p" style={{ display: 'flex', alignItems: 'center', color: '#5f1000' }} gutterBottom>
+              <PhoneIcon />
+              <a href="tel:+919157897526" style={{ marginLeft: '10px', color: '#5f1000', textDecoration: 'none' }}>+91 9157897526</a>
             </Typography>
-            <Typography variant="body2" align="left" color="blue">
+
+            <Typography variant="body1" component="p" style={{ display: 'flex', alignItems: 'center', color: '#5f1000' }} gutterBottom>
+              <MailOutlineIcon />
+              <a href="mailto:info@example.com" style={{ marginLeft: '10px', color: '#5f1000', textDecoration: 'none' }}>info@example.com</a>
+            </Typography>
+
+            <Typography variant="body2" align="left" noWrap>
               &copy; 2023 Hennessy. All rights reserved.
             </Typography>
           </Grid>

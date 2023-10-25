@@ -16,11 +16,13 @@ const handleWhatsAppClick = (productName) => {
 
 const useStyles = styled((theme) => ({
   productCard: {
+    
     padding: theme.spacing(2),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     height: '100%',
+    
     transition: 'transform 0.3s ease-in-out',
     '&:hover': {
       transform: 'scale(1.05)',
@@ -185,14 +187,14 @@ const ProductGrid = () => {
                       borderRadius: '10px',
                     }}
                   />
-                  <Typography variant="p" gutterBottom  sx={{color:'navy'}}>
+                  <Typography variant="p" gutterBottom  sx={{color:'5f1000', fontWeight:'600'}} noWrap>
                     {product.name}
                   </Typography>
                   <Box sx={{ margin: ' 0 1rem 1rem 0', display: 'flex', justifyContent: 'space-between' }}>
                     <Typography variant="contained" color="textSecondary" >
                       {product.category.name}
                     </Typography>
-                    <Typography variant="contained" color="primary">
+                    <Typography variant="contained" color="primary"  sx={{color:'5f1000', fontWeight:'600'}}>
                       ₹{product.price.toFixed(2)}
                     </Typography>
                   </Box>

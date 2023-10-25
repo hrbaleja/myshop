@@ -6,32 +6,33 @@ import CloseIcon from '@mui/icons-material/Close';
 import Logo from '../Images/Logo.png';
 
 const GlassAppBar = styled(AppBar)(({ theme }) => ({
-  backgroundColor: 'rgba(255, 255, 255, 0)',
-  boxShadow: 'none',
+  backgroundColor: ' rgba(255, 255, 255, .1)',
+  boxShadow: '0 6px 6px rgba(0, 0, 0, 0.1)',
   borderBottom: `1px solid ${theme.palette.divider}`,
   width: '100%',
-  color: 'rgba(0, 0, 0, 1)',
+  color: '#7B3F00',
   backdropFilter: 'blur(20px)',
 }));
 
 const StyledDrawer = styled(Drawer)(({ theme }) => ({
   '& .MuiPaper-root': {
-    // backgroundColor: 'rgba(248, 235, 195, 1)',
-    backdropFilter: 'blur(10px)',
+    backgroundColor: ' rgba(255, 255, 255, 1)',
+    backdropFilter: 'blur(20px)',
     borderRight: `1px solid ${theme.palette.divider}`,
     width: '250px',
-    fontWeight:"600",
-    color: 'inherit',  textDecoration: 'none',
+    fontWeight: "600",
+    color: '#5f1000',
+    textDecoration: 'none',
   },
 }));
 
-const NavLink = styled(Link)(({ theme, active }) => ({
-  fontWeight:"600",
-  color: 'inherit',
+const NavLink = styled(Link)(({ theme }) => ({
+  fontWeight: "700 ",
+  color: '#5f1000',
   textDecoration: 'none',
   padding: theme.spacing(1),
   '&:hover': {
-    backgroundColor: 'rgba(255, 255, 255, 0.4)', 
+    backgroundColor: 'rgba(255, 255, 255, 0.4)',
     borderRadius: '20px',
   },
 }));
@@ -47,11 +48,11 @@ function Header() {
           <Box display="flex" alignItems="center" justifyContent="space-between" width="100%">
             <Box display="flex" alignItems="center">
               <img src={Logo} alt="Logo" height="50" style={{ marginRight: '8px' }} />
-              <Typography variant="h4"  style={{fontWeight:'800', color:'navy'}}>
+              <Typography variant="h4" style={{ fontWeight: '800', color: '#5f1000' }}>
                 Hennessy Store
               </Typography>
             </Box>
-            <Box display={{ xs: 'none', md: 'flex'  }} sx={{color:'navy'}}>
+            <Box display={{ xs: 'none', md: 'flex' }} >
               <NavLink to="/">Home</NavLink>
               <NavLink to="/product">Product</NavLink>
               <NavLink to="/packing">Packing</NavLink>
@@ -74,12 +75,12 @@ function Header() {
       </GlassAppBar>
 
       <StyledDrawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer} >
-        <List style={{color:'navy'}}>
-        <ListItem  style={{cursor:"pointer", color:'navy'}} onClick={toggleDrawer}>
-            <ListItemText   primary="X" />
+        <List >
+          <ListItem style={{ cursor: "pointer"}} onClick={toggleDrawer}>
+            <ListItemText primary="X" />
           </ListItem>
           <ListItem button component={NavLink} to="/" active={location.pathname === '/'} onClick={toggleDrawer}>
-            <ListItemText  primary="Home" />
+            <ListItemText primary="Home" />
           </ListItem>
           <ListItem button component={NavLink} to="/product" active={location.pathname === '/product'} onClick={toggleDrawer}>
             <ListItemText primary="Product" />
