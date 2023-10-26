@@ -90,12 +90,12 @@ const ProductGrid = () => {
   };
 
   return (
-    <Box p={2} style={{ color: 'navy' }}>
+    <Box p={2} sx={{  minHeight:'90vh' }}>
       <Grid container spacing={2}>
         <Grid container spacing={2} mt={0} mb={2}>
           <Grid item xs={12} sm={4}>
             <FormControl fullWidth>
-              <TextField sx={{ color: 'navy' }}
+              <TextField sx={{ color: '#5f1000' }}
                 fullWidth
                 label="Search by Name"
                 // color='navy'
@@ -113,23 +113,23 @@ const ProductGrid = () => {
             </FormControl>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <FormControl fullWidth sx={{ color: 'navy' }}>
-              <InputLabel sx={{ color: 'navy' }}>Sort By</InputLabel>
-              <Select value={sortOrder} label="Sort By" onChange={(e) => sortProducts(e.target.value)} sx={{ color: 'navy' }}>
-                <MenuItem value="Relevance" sx={{ color: 'navy' }}>Relevance</MenuItem>
-                <MenuItem value="Low to High" sx={{ color: 'navy' }}>Price: Low to High</MenuItem>
-                <MenuItem value="High to Low" sx={{ color: 'navy' }}>Price: High to Low</MenuItem>
+            <FormControl fullWidth sx={{ color: '#5f1000' }}>
+              <InputLabel sx={{ color: '#5f1000' }}>Sort By</InputLabel>
+              <Select value={sortOrder} label="Sort By" onChange={(e) => sortProducts(e.target.value)} sx={{ color: '#5f1000' }}>
+                <MenuItem value="Relevance" sx={{ color: '#5f1000' }}>Relevance</MenuItem>
+                <MenuItem value="Low to High" sx={{ color: '#5f1000' }}>Price: Low to High</MenuItem>
+                <MenuItem value="High to Low" sx={{ color: '#5f1000' }}>Price: High to Low</MenuItem>
               </Select>
             </FormControl>
           </Grid>
 
           <Grid item xs={12} sm={4}>
             <FormControl fullWidth>
-              <InputLabel sx={{ color: 'navy' }}>Categories</InputLabel>
-              <Select value={selectedCategory} label="Categories" onChange={(e) => filterProductsByCategory(e.target.value)} sx={{ color: 'navy' }}>
-                <MenuItem value="All Categories" sx={{ color: 'navy' }}>All Categories</MenuItem>
+              <InputLabel sx={{ color: '#5f1000' }}>Categories</InputLabel>
+              <Select value={selectedCategory} label="Categories" onChange={(e) => filterProductsByCategory(e.target.value)} sx={{ color: '#5f1000' }}>
+                <MenuItem value="All Categories" sx={{ color: '#5f1000' }}>All Categories</MenuItem>
                 {categories.map((category) => (
-                  <MenuItem key={category._id} value={category.name} sx={{ color: 'navy' }}>
+                  <MenuItem key={category._id} value={category.name} sx={{ color: '#5f1000' }}>
                     {category.name}
                   </MenuItem>
                 ))}

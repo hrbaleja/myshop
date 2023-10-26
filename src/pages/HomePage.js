@@ -1,32 +1,33 @@
 import React from 'react';
-import { Typography, Container, } from '@mui/material';
+import { Typography, Container, Grid } from '@mui/material';
 import HeroImage from '../components/home/HeroImage';
 
 import ProductCarousel from '../components/home/ProductCarousel';
+import CategorySlider from '../components/home/CategorySlider';
 
 const HomePage = () => {
   return (
     <Container>
       <HeroImage />
-      <Typography variant="h4" gutterBottom textAlign="center" fontWeight='bold'>
-       Recent Products
-      </Typography>
-      <br></br>
-      <ProductCarousel />
+      
+      <Grid container spacing={2} mt={2} mb={2} justifyContent='center' >
+        <Typography variant="h5" component="h2" style={{ padding: '10px 0 0 20px', fontWeight: "bold", textAlign: 'center' }}>
+          Popular Product
+        </Typography>
+      </Grid>
 
-      <br></br>
+      <CategorySlider />
+      <Grid container spacing={2} mt={3} mb={2} justifyContent='center' >
+        <Typography variant="h5" component="h2" style={{ padding: '10px 0 0 20px', fontWeight: "bold", textAlign: 'center' }}>
+          Recent Products
+        </Typography>
+      </Grid>
+      <Grid alignContent='center'   >
+        <ProductCarousel />
+      </Grid>
 
-      <br></br>
-      {/* <Typography variant="h4" gutterBottom>
-        Welcome to My Website
-      </Typography>
-      <Typography variant="body1">
-        This is the home page of our website.
-        You can add content and components here to showcase your project or provide information about your services or products.
-      </Typography>
-      <Button variant="contained" color="primary" style={{ marginTop: '16px' }}>
-        Learn More
-      </Button> */}
+
+
 
     </Container>
   );

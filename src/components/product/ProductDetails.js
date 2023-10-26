@@ -58,7 +58,7 @@ const ProductDetails = () => {
   const newPrice = (pricePer1g * parseFloat(selectedWeight)).toFixed(2);
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" sx={{minHeight:'70vh'}}>
       <Grid container spacing={2} sx={{ margin: '20px 0' }}>
         <Grid item xs={12} sm={6} sx={{ paddingRight: '1rem' }}>
           <img

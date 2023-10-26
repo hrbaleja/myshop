@@ -21,7 +21,7 @@ const PackingGrid = () => {
   }, []);
 
   return (
-    <Box p={2}>
+    <Box p={2} sx={{minHeight:'80vh'}}>
       <Grid container spacing={2}>
         {packingData.map((packing) => (
           <Grid item key={packing.id} xs={12} sm={6} md={4} lg={3}>

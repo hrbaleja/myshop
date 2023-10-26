@@ -20,15 +20,17 @@ function App() {
     <Router>
       <div >
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/packing" element={<Packing />} />
-          <Route path="/product/:itemNumber" element={<ProductDetails />} />
-          <Route path="/packing/:packingId" element={<PackingDetails />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
+        <div style={{color:'#5f1000'}}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/packing" element={<Packing />} />
+            <Route path="/product/:itemNumber" element={<ProductDetails />} />
+            <Route path="/packing/:packingId" element={<PackingDetails />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+          <Footer />
+        </div>
       </div>
     </Router>
   )

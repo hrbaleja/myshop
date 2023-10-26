@@ -5,7 +5,6 @@ import { styled } from '@mui/system';
 
 
 const DivContainer = styled('div')(({ theme }) => ({
-    padding: ' 0 20px',
     borderRadius: '20px',
     margin:'1rem 0',
    
@@ -15,8 +14,7 @@ function HeroImage() {
     return (
         <DivContainer>
             <Box elevation={3}   >
-                
-                <Grid container spacing={3} alignItems="center">
+                <Grid container  alignItems="center">
                     <Grid item xs={12} md={6}>
                         <Typography variant="h4" component="h1" style={{ padding: '10px 0 10px 20px', fontWeight: "bold" }}>
                             Be it white, dark, or pure it has to be chocolate!

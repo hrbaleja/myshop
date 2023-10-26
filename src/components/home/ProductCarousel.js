@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import axios from 'axios'; // Import Axios or another HTTP library
 import Carousel from './Carousel';
+import { Grid } from '@mui/material';
 
 const ProductCarousel = () => {
   const [products, setProducts] = useState([]);
@@ -29,13 +30,14 @@ const ProductCarousel = () => {
 
   return (
     <div>
+      <Grid alignItems='center' justifyContent='center'>
       <Slider {...settings}>
         {products.slice(-4).map((product, index) => (
           <div key={index}>
             <Carousel product={product} />
           </div>
         ))}
-      </Slider>
+      </Slider></Grid>
     </div>
   );
 };
