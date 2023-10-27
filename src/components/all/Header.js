@@ -42,7 +42,7 @@ function Header() {
   const toggleDrawer = () => { setIsDrawerOpen(!isDrawerOpen); };
   const location = useLocation();
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }}  data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
       <GlassAppBar position="static" elevation={0}>
         <Toolbar>
           <Box display="flex" alignItems="center" justifyContent="space-between" width="100%">
@@ -56,7 +56,6 @@ function Header() {
               <NavLink to="/">Home</NavLink>
               <NavLink to="/product">Product</NavLink>
               <NavLink to="/packing">Packing</NavLink>
-
               <NavLink to="/contact">Contact</NavLink>
             </Box>
             <Box display={{ xs: 'flex', md: 'none' }}>

@@ -16,13 +16,11 @@ const handleWhatsAppClick = (productName) => {
 
 const useStyles = styled((theme) => ({
   productCard: {
-
     padding: theme.spacing(2),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     height: '100%',
-
     transition: 'transform 0.3s ease-in-out',
     '&:hover': {
       transform: 'scale(1.05)',
@@ -90,7 +88,7 @@ const ProductGrid = () => {
   };
 
   return (
-    <Box p={2} sx={{  minHeight:'90vh' }}>
+    <Box p={2} sx={{ minHeight: '90vh' }}>
       <Grid container spacing={2}>
         <Grid container spacing={2} mt={0} mb={2}>
           <Grid item xs={12} sm={4}>
@@ -98,7 +96,6 @@ const ProductGrid = () => {
               <TextField sx={{ color: '#5f1000' }}
                 fullWidth
                 label="Search by Name"
-                // color='navy'
                 value={searchQuery}
                 onChange={(e) => filterProductsBySearch(e.target.value)
                 }
@@ -156,67 +153,66 @@ const ProductGrid = () => {
               (selectedCategory === 'All Categories' || product.category.name === selectedCategory) &&
               (searchQuery === '' || product.name.toLowerCase().includes(searchQuery.toLowerCase()))
             )
-            .map((product) => (
-              <Grid item key={product._id} xs={12} sm={6} md={4} lg={3}>
-                <Paper
-                  elevation={3}
-                  sx={{
-                    background: 'rgba(255, 255, 255, 0.0)',
-                    backdropFilter: 'blur(5px)',
-                    'WebkitBackdropFilter': 'blur(5px)',
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    marginBottom: '16px',
-                    boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+            .map((product, index) => (<Grid item key={product._id} xs={12} sm={6} md={4} lg={3}  >
+              <Paper
+                elevation={3}
+                sx={{
+                  background: 'rgba(255, 255, 255, 0.0)',
+                  backdropFilter: 'blur(5px)',
+                  'WebkitBackdropFilter': 'blur(5px)',
+                  p: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  marginBottom: '16px',
+                  boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+                  borderRadius: '10px',
+                  border: '1px solid rgba(255, 255, 255, 0.18)',
+                  transition: 'transform 0.3s ease',
+                  '&:hover': { transform: 'scale(1.05)' },
+                }} data-aos="fade-up" data-aos-delay={`${index * 100}`}
+              >
+                <img
+                  src={`https://mychocolate-api.vercel.app/api/v1/uploads/get-image/${product.image}`}
+                  alt={product.name}
+                  className={classes.productImage}
+                  style={{
+                    width: '100%',
+                    height: '200px',
+                    objectFit: 'cover',
+                    marginBottom: '8px',
                     borderRadius: '10px',
-                    border: '1px solid rgba(255, 255, 255, 0.18)',
-                    transition: 'transform 0.3s ease',
-                    '&:hover': { transform: 'scale(1.05)' },
                   }}
-                >
-                  <img
-                    src={`https://mychocolate-api.vercel.app/api/v1/uploads/get-image/${product.image}`}
-                    alt={product.name}
-                    className={classes.productImage}
-                    style={{
-                      width: '100%',
-                      height: '200px',
-                      objectFit: 'cover',
-                      marginBottom: '8px',
-                      borderRadius: '10px',
-                    }}
-                  />
-                  <Typography variant="p" gutterBottom sx={{ color: '5f1000', fontWeight: '600' }} noWrap>
-                    {product.name}
+                  data-aos="zoom-in" />
+                <Typography variant="p" gutterBottom sx={{ color: '5f1000', fontWeight: '600' }} noWrap data-aos="fade-left" >
+                  {product.name}
+                </Typography>
+                <Box sx={{ margin: ' 0 1rem 1rem 0', display: 'flex', justifyContent: 'space-between' }} data-aos="flip-up" >
+                  <Typography variant="contained" color="textSecondary" >
+                    {product.category.name}
                   </Typography>
-                  <Box sx={{ margin: ' 0 1rem 1rem 0', display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography variant="contained" color="textSecondary" >
-                      {product.category.name}
-                    </Typography>
-                    <Typography variant="contained" color="primary" sx={{ color: '5f1000', fontWeight: '600' }}>
-                      ₹{product.price.toFixed(2)}
-                    </Typography>
-                  </Box>
-                  <Box sx={{ marginRight: '1rem', display: 'flex', justifyContent: 'space-between' }}>
-                    <Link to={`/product/${product._id}`} style={{ textDecoration: 'none' }}>
-                      <Button variant="outlined" color="primary">
-                        Details
-                      </Button>
-                    </Link>
-                    <WhatsappShareButton
-                      url={`https://example.com/product/${product._id}`}
-                      title={product.name}
-                      separator=" - "
-                      onClick={() => handleWhatsAppClick(product.name)}
-                    >
-                      <Button variant="contained" color="success">
-                        WhatsApp
-                      </Button>
-                    </WhatsappShareButton>
-                  </Box>
-                </Paper>
-              </Grid>
+                  <Typography variant="contained" color="primary" sx={{ color: '5f1000', fontWeight: '600' }}>
+                    ₹{product.price.toFixed(2)}
+                  </Typography>
+                </Box>
+                <Box sx={{ marginRight: '1rem', display: 'flex', justifyContent: 'space-between' }}>
+                  <Link to={`/product/${product._id}`} style={{ textDecoration: 'none' }}>
+                    <Button variant="outlined" color="primary" data-aos="fade-up">
+                      Details
+                    </Button>
+                  </Link>
+                  <WhatsappShareButton
+                    url={`https://example.com/product/${product._id}`}
+                    title={product.name}
+                    separator=" - "
+                    onClick={() => handleWhatsAppClick(product.name)}
+                  >
+                    <Button variant="outlined" color="success" data-aos="fade-up">
+                      WhatsApp
+                    </Button>
+                  </WhatsappShareButton>
+                </Box>
+              </Paper>
+            </Grid>
             ))
         )}
       </Grid>

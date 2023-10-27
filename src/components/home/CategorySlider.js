@@ -35,36 +35,30 @@ const CategorySlider = () => {
 
     return (
         <div>
-            
             <Slider {...settings}>
-                <div className="fontmyview">
-                    <article data-icon="🍊" style={articleStyles1}>
-                        <h3>option</h3>
+                <div className="fontmyview" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
+                    <article data-icon="🍊" style={articleStyles1} >
+                        <h3 >option</h3>
                         <h4>gingerbread</h4>
                         <p>Cake muffin donut chocolate cake jelly sesame wafer tart pie muffin.</p>
                     </article>
-
                 </div>
-                <div className="fontmyview">
-
+                <div className="fontmyview"  data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
                     <article data-icon="🍐" style={articleStyles2}>
                         <h3>option</h3>
                         <h4>brownie</h4>
                         <p>Cake cookie lemon muffin plum. Orange topping macaroon chocolate.</p>
                     </article>
-
                 </div>
-                <div className="fontmyview">
+                <div className="fontmyview"  data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
 
                     <article data-icon="🍇" style={articleStyles3}>
                         <h3>option</h3>
                         <h4>ice cream</h4>
                         <p>Cake muffin donut chocolate cake jelly sesame wafer tart pie muffin.</p>
                     </article>
-
                 </div>
-                <div className="fontmyview">
-
+                <div className="fontmyview"  data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
                     <article data-icon="🍓" style={articleStyles4}>
                         <h3>option</h3>
                         <h4>lava cake</h4>

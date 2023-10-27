@@ -34,7 +34,7 @@ const ProductCarousel = () => {
       <Slider {...settings}>
         {products.slice(-4).map((product, index) => (
           <div key={index}>
-            <Carousel product={product} />
+            <Carousel product={product}  color={'fff000'}/>
           </div>
         ))}
       </Slider></Grid>
