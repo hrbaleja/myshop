@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./YourSliderComponent.css";
 import he from '../Images/3237265.jpg'
-import he1 from '../Images/12345.jpg'
 
 
 
