@@ -12,7 +12,7 @@ const Footer = () => {
       {
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
-        color: '#5f1000',
+        color: '#151950',
         boxShadow: '0 -6px 6px rgba(0, 0, 0, 0.1)',
         margin:'1rem 0'
       }
@@ -78,14 +78,14 @@ const Footer = () => {
               {'\u00A0'} 
             </Typography>
 
-            <Typography variant="body1" component="p" style={{ display: 'flex', alignItems: 'center', color: '#5f1000' }} gutterBottom>
+            <Typography variant="body1" component="p" style={{ display: 'flex', alignItems: 'center', color: '#151950' }} gutterBottom>
               <PhoneIcon />
-              <a href="tel:+919157897526" style={{ marginLeft: '10px', color: '#5f1000', textDecoration: 'none' }}>+91 9157897526</a>
+              <a href="tel:+919157897526" style={{ marginLeft: '10px', color: '#151950', textDecoration: 'none' }}>+91 9157897526</a>
             </Typography>
 
-            <Typography variant="body1" component="p" style={{ display: 'flex', alignItems: 'center', color: '#5f1000' }} gutterBottom>
+            <Typography variant="body1" component="p" style={{ display: 'flex', alignItems: 'center', color: '#151950' }} gutterBottom>
               <MailOutlineIcon />
-              <a href="mailto:info@example.com" style={{ marginLeft: '10px', color: '#5f1000', textDecoration: 'none' }}>info@example.com</a>
+              <a href="mailto:info@example.com" style={{ marginLeft: '10px', color: '#151950', textDecoration: 'none' }}>info@example.com</a>
             </Typography>
 
             <Typography variant="body2" align="left" noWrap>

@@ -20,8 +20,9 @@ function App() {
   return (
     <Router>
       <div >
+        
         <Header />
-        <div style={{color:'#5f1000'}}>
+        <div style={{color:'#917236'}}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/product" element={<Product />} />

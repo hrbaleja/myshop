@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, IconButton, Box, Drawer, List, ListItem, ListItemText, styled } from '@mui/material';
+import { AppBar, Toolbar,  IconButton, Box, Drawer, List, ListItem, ListItemText, styled } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import Logo from '../Images/Logo.png';
+// import Logo from '../Images/LOG.png';
+import he from '../Images/Hn.jpg';
+
 
 const GlassAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: ' rgba(255, 255, 255, .1)',
   boxShadow: '0 6px 6px rgba(0, 0, 0, 0.1)',
   borderBottom: `1px solid ${theme.palette.divider}`,
   width: '100%',
-  color: '#7B3F00',
+  color: '#917236',
   backdropFilter: 'blur(20px)',
 }));
 
@@ -21,14 +23,14 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
     borderRight: `1px solid ${theme.palette.divider}`,
     width: '250px',
     fontWeight: "600",
-    color: '#5f1000',
+    color: '#917236',
     textDecoration: 'none',
   },
 }));
 
 const NavLink = styled(Link)(({ theme }) => ({
   fontWeight: "700 ",
-  color: '#5f1000',
+  color: '#917236',
   textDecoration: 'none',
   padding: theme.spacing(1),
   '&:hover': {
@@ -47,10 +49,12 @@ function Header() {
         <Toolbar>
           <Box display="flex" alignItems="center" justifyContent="space-between" width="100%">
             <Box display="flex" alignItems="center">
-              <img src={Logo} alt="Logo" height="50" style={{ marginRight: '8px' }} />
-              <Typography variant="h4" style={{ fontWeight: '800', color: '#5f1000' }}>
+              {/* <img src={Logo} alt="Logo" height="50" style={{ marginRight: '8px' }} /> */}
+              <img src={he} alt="Logo" height="50" style={{ marginRight: '8px' }} />
+
+              {/* <Typography variant="h4" style={{ fontWeight: '800', color: '#5f1000' }}>
                 Hennessy Store
-              </Typography>
+              </Typography> */}
             </Box>
             <Box display={{ xs: 'none', md: 'flex' }} >
               <NavLink to="/">Home</NavLink>
