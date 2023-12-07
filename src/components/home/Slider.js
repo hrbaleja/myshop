@@ -3,18 +3,22 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./YourSliderComponent.css";
+import he from '../Images/3237265.jpg'
+import he1 from '../Images/12345.jpg'
+
+
 
 const YourSliderComponent = () => {
   const slides = [
     {
-      image: "https://www.chocolate.lindt.com/media/wysiwyg/MMC_Lindt_XMas-23_Pick-and-Mix-2-Desktop_3.jpg",
-      heading: "OUR CHRISTMAS SELECTION",
-      content: "Discover all the creations of our Master Chocolatiers for this Christmas. Created to delight your beloved. Discover the perfect gifts for every occasion.",
-      link: "https://www.chocolate.lindt.com/christmas",
-      buttonText: "DISCOVER",
+      image: he,
+    //   heading: "OUR CHRISTMAS SELECTION",
+    //   content: "Discover all the creations of our Master Chocolatiers for this Christmas. Created to delight your beloved. Discover the perfect gifts for every occasion.",
+    //   link: "https://www.chocolate.lindt.com/christmas",
+    //   buttonText: "DISCOVER",
     },
     {
-      image: "https://www.chocolate.lindt.com/media/wysiwyg/Hero-Banner-Desktop_1440x800_2.jpg",
+      image: "https://cdn.britannica.com/60/190360-050-0A5E06CB/Cocoa-powder-cocoa-beans.jpg",
       heading: "EXCELLENCE COCOA PURE",
       content: "Discover the new, limited edition EXCELLENCE COCOA PURE made 100% from the cocoa fruit - with nothing else added, without refined sugar.",
       link: "https://www.chocolate.lindt.com/excellence/new-excellence-cocoa-pure",
