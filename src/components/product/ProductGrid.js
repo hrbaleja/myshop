@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Grid, Paper, Typography, Button, TextField, CircularProgress, InputLabel, styled, Box, FormControl, Select, MenuItem, InputAdornment, IconButton, } from '@mui/material';
+import { Grid, Paper, Typography, Button, TextField, CircularProgress, Card, CardMedia, CardContent, InputLabel, styled, Box, FormControl, Select, MenuItem, InputAdornment, IconButton, } from '@mui/material';
 import { Search } from '@mui/icons-material';
 import { WhatsappShareButton } from 'react-share';
 import { Link } from 'react-router-dom';
@@ -154,7 +154,51 @@ const ProductGrid = () => {
               (searchQuery === '' || product.name.toLowerCase().includes(searchQuery.toLowerCase()))
             )
             .map((product, index) => (<Grid item key={product._id} xs={12} sm={6} md={4} lg={3}  >
-              <Paper
+
+
+              <Card className={classes.card}>
+                <CardMedia
+                  className={classes.cardMedia}
+                  component="img"
+                  height="200px"
+                  image={`https://mychocolate-api.vercel.app/api/v1/uploads/get-image/${product.image}`}
+                  alt={product.name}
+                />
+                <CardContent className={classes.cardContent}>
+                <Typography variant="p" gutterBottom sx={{  color: '#917236', fontFamily: 'koho' ,fontWeight: '600', fontSize:'1.2rem'  }} noWrap data-aos="fade-left" >
+                  {product.name}
+                </Typography>
+                <Box sx={{ margin: ' 0 1rem 1rem 0', display: 'flex', justifyContent: 'space-between' }} data-aos="flip-up" >
+                  <Typography variant="contained"  style={{color:'#7f6a42'}} >
+                    {product.category.name}
+                  </Typography>
+                  <Typography variant="contained" color="primary" sx={{ color: '#5f1000', fontWeight: '600' }}>
+                    ₹{product.price.toFixed(2)}
+                  </Typography>
+                </Box>
+                <Box sx={{ marginRight: '1rem', display: 'flex', justifyContent: 'space-between' }}>
+                  <Link to={`/product/${product._id}`} style={{ textDecoration: 'none' }}>
+                    <Button variant="outlined" color="primary" data-aos="fade-up">
+                      Details
+                    </Button>
+                  </Link>
+                  <WhatsappShareButton
+                    url={`https://example.com/product/${product._id}`}
+                    title={product.name}
+                    separator=" - "
+                    onClick={() => handleWhatsAppClick(product.name)}
+                  >
+                    <Button variant="outlined" color="success" data-aos="fade-up">
+                      WhatsApp
+                    </Button>
+                  </WhatsappShareButton>
+                </Box>
+                 
+                </CardContent>
+              </Card>
+              
+
+              {/* <Paper
                 elevation={3}
                 sx={{
                   background: 'rgba(255, 255, 255, 0.0)',
@@ -211,7 +255,7 @@ const ProductGrid = () => {
                     </Button>
                   </WhatsappShareButton>
                 </Box>
-              </Paper>
+              </Paper> */}
             </Grid>
             ))
         )}

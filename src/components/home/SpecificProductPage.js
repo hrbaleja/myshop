@@ -35,7 +35,8 @@ const SpecificProductPage = ({ category, color }) => {
                     <Grid item >
                         <Typography variant="h5" gutterBottom sx={{ fontWeight: '800', fontFamily: 'koho' }} noWrap data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
                             {category}
-                        </Typography></Grid>
+                        </Typography>
+                        </Grid>
                 </Grid>
                 <hr data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" />
                 {loading ? (

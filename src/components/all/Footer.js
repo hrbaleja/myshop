@@ -13,12 +13,13 @@ const Footer = () => {
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
         color: '#151950',
-        boxShadow: '0 -6px 6px rgba(0, 0, 0, 0.1)',
-        margin:'1rem 0'
+        boxShadow: 'inset 0px 2px 1px -1px rgba(0,0,0,0.1), inset 0px 1px 1px 0px rgba(0,0,0,0.14), inset 0px 1px 2px 0px rgba(0,0,0,0.12)',
+        margin:'2rem 0'
       }
     }>
       <Container maxWidth="lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" >
         <Grid container spacing={3} justifyContent="space-between">
+          
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" component="h6" gutterBottom fontWeight="bold">
               Hennessy Store

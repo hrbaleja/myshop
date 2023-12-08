@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Typography, Card, CardMedia, Button } from '@mui/material';
+import {  Grid, Typography, Card, CardMedia, Button } from '@mui/material';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -11,8 +11,18 @@ const History = () => {
   return (
     <div style={{margin:'2rem'}}>
       <Grid container spacing={2}>
-        <Grid item xs={12} md={6} data-aos="fade-right">
-          <div className="content-container" style={{ backgroundColor: '#f7f7f7', padding: '20px' }}>
+      <Grid item xs={12} md={6} data-aos="fade-right">
+          <Card>
+            <CardMedia
+              component="img"
+              alt="A mother and her children enjoying Lindt."
+              height="360"
+              image="https://www.chocolate.lindt.com/media/wysiwyg/Mother-and-Children-720x460.jpg"
+            />
+          </Card>
+        </Grid>
+        <Grid item xs={12} md={6} data-aos="fade-left">
+          <div className="content-container" style={{ backgroundColor: '#f7f7f7', padding: '20px'  }}>
             <Typography variant="h4" style={{ marginBottom: '20px' }}>
               HERITAGE
             </Typography>
@@ -37,32 +47,14 @@ const History = () => {
               Read More              </Button>
           </div>
         </Grid>
-        <Grid item xs={12} md={6} data-aos="fade-left">
-          <Card>
-            <CardMedia
-              component="img"
-              alt="A mother and her children enjoying Lindt."
-              height="360"
-              image="https://www.chocolate.lindt.com/media/wysiwyg/Mother-and-Children-720x460.jpg"
-            />
-          </Card>
-        </Grid>
+        
+       
         <Grid item xs={12} md={6} data-aos="fade-right">
-          <Card>
-            <CardMedia
-              component="img"
-              alt="Lindt chocolate beans still in a cocoa pod."
-              height="360"
-              image="https://www.chocolate.lindt.com/media/wysiwyg/Cocoa-Pods-720x460.jpg"
-            />
-          </Card>
-        </Grid>
-        <Grid item xs={12} md={6} data-aos="fade-left">
           <div className="content-container" style={{ backgroundColor: '#f7f7f7', padding: '20px' }}>
-            <Typography variant="h4" style={{ marginBottom: '20px' }}>
+            <Typography variant="h4" style={{ marginBottom: '25px' }}>
               Sustainability
             </Typography>
-            <Typography variant="h2" style={{ marginBottom: '20px' }}>
+            <Typography variant="h2" style={{ marginBottom: '25px' }}>
               Our Ethos
             </Typography>
             <Typography variant="body1">
@@ -81,7 +73,18 @@ const History = () => {
               href="https://www.chocolate.lindt.com/world-of-lindt/lindt-history"
             >
               Read More            </Button>
+              <br/>
           </div>
+        </Grid>
+        <Grid item xs={12} md={6} data-aos="fade-left">
+          <Card>
+            <CardMedia
+              component="img"
+              alt="Lindt chocolate beans still in a cocoa pod."
+              height="360"
+              image="https://www.chocolate.lindt.com/media/wysiwyg/Cocoa-Pods-720x460.jpg"
+            />
+          </Card>
         </Grid>
       </Grid>
     </div>

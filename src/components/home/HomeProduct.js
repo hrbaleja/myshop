@@ -7,14 +7,13 @@ const useStyles = styled((theme) => ({
         padding: theme.spacing(2),
     },
     card: {
-
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-
+        fontFamily: 'koho',
     },
     cardMedia: {
-        paddingTop: '56.25%', // 16:9
+        paddingTop: '56.25%',
     },
     cardContent: {
         flexGrow: 1,
@@ -30,11 +29,17 @@ const items = [
     { id: 6, name: 'Eviya Plup N Juice', imageUrl: 'https://mychocolate-api.vercel.app/api/v1/uploads/get-image/image-1698233916426.png' },
 ];
 
-const MyUIComponent = () => {
+const PropularProduct = () => {
     const classes = useStyles();
-
     return (
-        <div className={classes.root} style={{ margin: '0 1rem' }}>
+        <div   style={{ backgroundColor: '#f7f7f7',  padding: '0 1rem 2.5rem 1rem' }}>
+            <Grid container spacing={2} mt={2} mb={2} justifyContent='center' data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" >
+                <Typography variant="h4" component="h2" style={{ padding: '10px 0 0 20px', textAlign: 'center', fontFamily: 'Lora' }}>
+                    EXPLORE OUR  PRODUCT
+                </Typography>
+            </Grid>
+            <hr data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" />
+
             <Grid container spacing={2}>
                 {items.map((item) => (
                     <Grid item xs={12} sm={6} md={4} lg={2} key={item.id}>
@@ -48,10 +53,9 @@ const MyUIComponent = () => {
                                 alt={item.name}
                             />
                             <CardContent className={classes.cardContent}>
-                                <Typography gutterBottom variant="h6" component="div" style={{ color: '#917236' }}>
+                                <Typography gutterBottom variant="h6" component="div" style={{ color: '#917236', fontFamily: 'koho' }}>
                                     {item.name}
                                 </Typography>
-                                {/* Add more content or customize as needed */}
                             </CardContent>
                         </Card>
                     </Grid>
@@ -61,4 +65,4 @@ const MyUIComponent = () => {
     );
 };
 
-export default MyUIComponent;
+export default PropularProduct;
