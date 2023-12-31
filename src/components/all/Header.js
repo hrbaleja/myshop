@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { AppBar, Toolbar,  IconButton, Box, Drawer, List, ListItem, ListItemText, styled } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Box, Drawer, List, ListItem, ListItemText, styled } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 // import Logo from '../Images/LOG.png';
@@ -9,7 +9,7 @@ import he from '../Images/Hn.jpg';
 
 const GlassAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: ' rgba(255, 255, 255, .1)',
-  boxShadow: '0 6px 6px rgba(0, 0, 0, 0.1)',
+  boxshadow: '0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)',
   borderBottom: `1px solid ${theme.palette.divider}`,
   width: '100%',
   color: '#917236',
@@ -44,13 +44,15 @@ function Header() {
   const toggleDrawer = () => { setIsDrawerOpen(!isDrawerOpen); };
   const location = useLocation();
   return (
-    <Box sx={{ flexGrow: 1 }}  data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
+    <Box sx={{ flexGrow: 1 }} data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
       <GlassAppBar position="static" elevation={0}>
         <Toolbar>
           <Box display="flex" alignItems="center" justifyContent="space-between" width="100%">
             <Box display="flex" alignItems="center">
               {/* <img src={Logo} alt="Logo" height="50" style={{ marginRight: '8px' }} /> */}
-              <img src={he} alt="Logo" height="50" style={{ marginRight: '8px' }} />
+              <a href="/">
+                <img src={he} alt="Logo" height="50" style={{ marginRight: '8px' }} />
+              </a>
 
               {/* <Typography variant="h4" style={{ fontWeight: '800', color: '#5f1000' }}>
                 Hennessy Store
@@ -79,7 +81,7 @@ function Header() {
 
       <StyledDrawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer} >
         <List >
-          <ListItem style={{ cursor: "pointer"}} onClick={toggleDrawer}>
+          <ListItem style={{ cursor: "pointer" }} onClick={toggleDrawer}>
             <ListItemText primary="X" />
           </ListItem>
           <ListItem button component={NavLink} to="/" active={location.pathname === '/'} onClick={toggleDrawer}>

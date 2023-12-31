@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Grid, Card, CardContent, CardMedia, Typography, styled } from '@mui/material';
 import { getProducts } from '../services/productService';
+import { Link } from 'react-router-dom';
 
 const useStyles = styled((theme) => ({
     root: {
@@ -22,61 +23,64 @@ const useStyles = styled((theme) => ({
 }));
 
 const HomeRecent = () => {
-  const classes = useStyles();
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+    const classes = useStyles();
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await getProducts();
-        setProducts(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching data: ', error);
-        setLoading(false);
-      }
-    };
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await getProducts();
+                setProducts(response.data);
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching data: ', error);
+                setLoading(false);
+            }
+        };
 
-    fetchData();
-  }, []); 
+        fetchData();
+    }, []);
 
-  return (
-    <div style={{ backgroundColor: '#f7f7f7', padding: '0 1rem 2.5rem 1rem' }}>
-      <Grid container spacing={2} mt={2} mb={2} justifyContent='center' data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" >
-        <Typography variant="h4" component="h2" style={{ padding: '10px 0 0 20px', textAlign: 'center', fontFamily: 'Lora' }}>
-        EXPLORE OUR  PRODUCT
-        </Typography>
-      </Grid>
-      <hr data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" />
-
-      <Grid container spacing={2}>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-            products.slice(0,6).map((product) => (
-            <Grid item xs={12} sm={6} md={4} lg={2} key={product._id}>
-              <Card className={classes.card}>
-                <CardMedia
-                  className={classes.cardMedia}
-                  component="img"
-                  height="200"
-                  width="180"
-                  image={`https://mychocolate-api.vercel.app/api/v1/uploads/get-image/${product.image}`}
-                  alt={product.name}
-                />
-                <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="P1" component="div" style={{ color: '#917236', fontFamily: 'koho' }}>
-                    {product.name}
-                  </Typography>
-                </CardContent>
-              </Card>
+    return (
+        <div style={{ backgroundColor: '#f7f7f7', padding: '0 1rem 2.5rem 1rem' }}>
+            <Grid container spacing={2} mt={2} mb={2} justifyContent='center' data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" >
+                <Typography variant="h4" component="h2" style={{ padding: '10px 0 0 20px', textAlign: 'center', fontFamily: 'Lora' }}>
+                    EXPLORE OUR  PRODUCT
+                </Typography>
             </Grid>
-          ))
-        )}
-      </Grid>
-    </div>
-  );
+            <hr data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" />
+
+            <Grid container spacing={2}>
+                {loading ? (
+                    <p>Loading...</p>
+                ) : (
+                    products.slice(0, 6).map((product) => (
+                        <Grid item xs={6} sm={6} md={4} lg={2} key={product._id}>
+                            <Link to={`/product/${product._id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+
+                                <Card className={classes.card}>
+                                    <CardMedia
+                                        className={classes.cardMedia}
+                                        component="img"
+                                        height="200"
+                                        width="180"
+                                        image={`https://mychocolate-api.vercel.app/api/v1/uploads/get-image/${product.image}`}
+                                        alt={product.name}
+                                    />
+                                    <CardContent className={classes.cardContent}>
+                                        <Typography gutterBottom variant="P1" component="div" style={{ color: '#917236', fontFamily: 'koho' }}>
+                                            {product.name}
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
+                            </Link>
+                        </Grid>
+                    ))
+                )}
+            </Grid>
+        </div>
+    );
 };
 
 export default HomeRecent;

@@ -51,7 +51,7 @@ const HomeCategory = () => {
 
             <Grid container spacing={2}>
                 {items.map((item) => (
-                    <Grid item xs={12} sm={6} md={4} lg={2} key={item.id}>
+                    <Grid item xs={6} sm={6} md={4} lg={2} key={item.id}>
                         <Card className={classes.card}>
                             <CardMedia
                                 className={classes.cardMedia}

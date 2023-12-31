@@ -1,4 +1,5 @@
 import React from 'react';
+import { Typography, Container, Button, Box, Grid } from '@mui/material';
 
 import Carousel from '../components/home/Carousel';
 import PropularProduct from '../components/home/HomeProduct';
@@ -25,7 +26,11 @@ const HomePage = () => {
 
       {/* History Page */}
       <History />
-
+      <Grid container spacing={2} mt={2} mb={2} justifyContent='center' data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" >
+        <Typography variant="h4" component="h2" style={{ padding: '10px 0 0 20px', textAlign: 'center', fontFamily: 'Lora' }}>
+          NEW LAUNCHES PRODUCT
+        </Typography>
+      </Grid>
       {/* Recent Products Section */}
       <HomeRecent />
 
