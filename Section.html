@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            flex-direction: column;
+        }
+
+        .buttons-container {
+            text-align: center;
+
+        }
+
+        button {
+            background-color: #FFFFFF;
+            border: 1px solid #222222;
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: #222222;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+            margin: 10px;
+            outline: none;
+            padding: 13px 23px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            touch-action: manipulation;
+            transition: box-shadow .2s, -ms-transform .1s, -webkit-transform .1s, transform .1s;
+            user-select: none;
+            -webkit-user-select: none;
+            width: auto;
+        }
+
+        button:hover {
+            background: linear-gradient(to bottom, #6ed5c6, #09c4d1);
+            box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+            transition: box-shadow .2s;
+
+        }
+
+        .content {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="buttons-container">
+        <button id="beginnerBtn">Beginner</button>
+        <button id="intermediateBtn">Intermediate</button>
+        <button id="advancedBtn">Advanced</button>
+    </div>
+
+    <div id="beginnerContent" class="content">
+        <p>This is the content for beginners.</p>
+    </div>
+
+    <div id="intermediateContent" class="content">
+        <p>This is the content for intermediates.</p>
+    </div>
+
+    <div id="advancedContent" class="content">
+        <p>This is the content for advanced users.</p>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#beginnerContent").show();
+            $("#beginnerBtn").click(function () {
+                $(".content").hide();
+                $("#beginnerContent").show();
+            });
+
+            $("#intermediateBtn").click(function () {
+                $(".content").hide();
+                $("#intermediateContent").show();
+            });
+
+            $("#advancedBtn").click(function () {
+                $(".content").hide();
+                $("#advancedContent").show();
+            });
+        });
+    </script>
+</body>
+
+</html>
