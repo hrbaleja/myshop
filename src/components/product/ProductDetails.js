@@ -18,6 +18,8 @@ const ProductDetails = () => {
   const [product, setProduct] = useState(null);
   const [selectedWeight, setSelectedWeight] = useState('100g');
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [isJarSelected, setIsJarSelected] = useState(false);
+
 
   useEffect(() => {
     const productAPIUrl = `https://mychocolate-api.vercel.app/api/v1/product/${itemNumber}`;
@@ -47,20 +49,38 @@ const ProductDetails = () => {
       });
   }, [itemNumber]);
 
+  const calculatePrice = () => {
+    let basePrice = product.price / 100; // Base price per 1g
+    if (isJarSelected) {
+      basePrice += 0.10; // Increase the price by 10 rupees for jar packaging
+    }
+    return (basePrice * parseFloat(selectedWeight)).toFixed(2);
+  };
 
 
 
   if (!product) {
     return <div>Loading...</div>;
   }
+  const newPrice = calculatePrice();
 
+  const handleJarButtonClick = () => {
+    setIsJarSelected(true);
+  };
+
+  const handlePackageButtonClick = () => {
+    setIsJarSelected(false);
+  };
+  const handleWeightButtonClick = (weight) => {
+    setSelectedWeight(weight);
+  };
   // Adjust the price calculation to be per 1g
-  const pricePer1g = (product.price / 100).toFixed(2);
-  const newPrice = (pricePer1g * parseFloat(selectedWeight)).toFixed(2);
+  // const pricePer1g = (product.price / 100).toFixed(2);
+  // const newPrice = (pricePer1g * parseFloat(selectedWeight)).toFixed(2);
 
   return (
     <div  >
-      <Container sx={{ minHeight: '70vh' }}>
+    <Container maxWidth="lg" sx={{minHeight:'70vh'}}>
         <Grid container spacing={2} sx={{ margin: '20px 0' }}>
           <Grid item xs={12} sm={6} sx={{ paddingRight: '1rem' }}>
             <img
@@ -94,6 +114,7 @@ const ProductDetails = () => {
                   >
                     Go Back
                   </Button>
+                  
                 </Grid>
                 <Grid item xs={6}>
                   <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -113,17 +134,18 @@ const ProductDetails = () => {
             </Box>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Typography variant="h4" component="h4" gutterBottom>
+            <Typography variant="h4" component="h4" gutterBottom  sx={{ color: '#5f1000', fontWeight: '600' }}  >
               <strong>{product.name}</strong>
             </Typography>
             <Typography variant="body1" paragraph>
-              <strong>Item Number:</strong>{product.item_number}
+              <strong>Batch No: </strong>{product.batchno}
             </Typography>
+          
             <Typography variant="body1" paragraph>
-              <strong>Category:</strong>  {product.category.name}
+              <strong>Category: </strong>  {product.category.name}
             </Typography>
-            <Typography variant="body1" paragraph>
-              <strong>Price :</strong> ₹{newPrice}
+            <Typography variant="body1" paragraph  sx={{ color: '#5f1000', fontWeight: '600' }}>
+              <strong>Price :</strong > ₹{newPrice}
             </Typography>
 
             {product.weights && (
@@ -131,40 +153,48 @@ const ProductDetails = () => {
                 <Typography variant="body1">
                   <strong>Available Weight:</strong>
                   {product.weights.map((weight, index) => (
-                    <Button
-                      key={index}
-                      variant="outlined"
-                      style={{ margin: '8px' }}
-                      onClick={() => setSelectedWeight(weight)}
-                    >
-                      {weight}
-                    </Button>
+                   <Button
+                   key={index}
+                   variant="outlined"
+                   style={{
+                     margin: '8px',
+                     color: selectedWeight === weight ? ' #5f1000' : ' #1976d2',
+                   }}
+                   onClick={() => handleWeightButtonClick(weight)}
+                 >
+                   {weight}
+                 </Button>
                   ))}
                 </Typography>
               </div>
             )}
 
             <div>
-              <Typography variant="body1">
-                <strong>Available Packing:</strong>
-                <Button
-                  variant="outlined"
-                  style={{ margin: '8px' }}
-                >
-                  Package
-                </Button>
-                <Button
-                  variant="outlined"
-                  style={{ margin: '8px' }}
-                >
-                  Jar
-                </Button>
-              </Typography>
+            <Typography variant="body1">
+          <strong>Available Packing:</strong>
+          <Button
+            variant="outlined"
+            style={{ margin: '8px', color: isJarSelected ? '#1976d2' : '#5f1000' }}
+            onClick={handlePackageButtonClick}
+          >
+            Package
+          </Button>
+          <Button
+            variant="outlined"
+            style={{ margin: '8px', color: isJarSelected ? '#5f1000' : '#1976d2' }}
+            onClick={handleJarButtonClick}
+          >
+            Jar
+          </Button>
+        </Typography>
             </div>
 
 
             <Typography variant="body1" paragraph textAlign="justify">
               <strong>Description:</strong> {product.description}
+            </Typography>
+            <Typography variant="body1" paragraph>
+              <strong>Barcode: </strong>{product.barcode}
             </Typography>
             {filteredProducts && filteredProducts.length > 0 && (
               <div>
