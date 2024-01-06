@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./YourSliderComponent.css";
 import he from '../Images/3237265.jpg'
 import he1 from '../Images/323546.jpg'
+import he2 from '../Images/Three.jpg'
 
 
 
@@ -20,31 +21,31 @@ const Carousel = () => {
     {
       image: "https://cdn.britannica.com/60/190360-050-0A5E06CB/Cocoa-powder-cocoa-beans.jpg",
       heading: "EXCELLENCE COCOA PURE",
-      content: "Discover the new, limited edition EXCELLENCE COCOA PURE made 100% from the cocoa fruit - with nothing else added, without refined sugar.",
-      link: "https://www.chocolate.lindt.com/excellence/new-excellence-cocoa-pure",
-      buttonText: "DISCOVER",
+      content: "Celebrate all festival and occasions with chocolate coated Nuts with Hennessy",
+      link: "/packing",
+      buttonText: "EXPLORE PRODUCTS",
     },
     {
       image: he1,
       heading: "Welcome to the World of Hennessy Chocolate ",
-      content: "Experience Lindt: the ultimate chocolate delight brought to you by our passionate Master Chocolatiers. Since 1845, our exquisite creations have provided moments of bliss for you to savour.",
-      link: "https://www.chocolate.lindt.com/our-chocolate",
+      content: "Celebrate all festival and occasions with chocolate coated Nuts with Hennessy",
+      link: "/product",
       buttonText: "EXPLORE PRODUCTS",
     },
     {
-      image: "https://www.chocolate.lindt.com/media/wysiwyg/Lindor-Salted-Caramel-box-1440x800_1.jpg",
-      heading: "Discover our Newest Creation",
-      content: "Conjured fresh from the kitchen, LINDOR Salted Caramel laces smooth milk chocolate with buttery caramel and salt flakes to create an enhanced bittersweet flavour.",
-      link: "https://www.chocolate.lindt.com/lindt-lindor-salted-caramel-truffles-200g",
-      buttonText: "READ MORE",
+      image: he2,
+      heading:"Indulge, Boost, Delight.",
+      content: "Indulge in the irresistible joy of chocolate, a delightful treat that not only satisfies your sweet cravings but also provides a boost of happiness and antioxidants for a guilt-free pleasure.",
+      // link: "https://www.chocolate.lindt.com/lindt-lindor-salted-caramel-truffles-200g",
+      // buttonText: "READ MORE",
     },
-    {
-      image: "https://www.chocolate.lindt.com/media/wysiwyg/Praline1440x800_2.jpg",
-      heading: "What is The Lindt Difference?",
-      content: "A combination of the highest quality ingredients, unrivalled care and unparalleled skill that goes into crafting each chocolate, and – most importantly – our chocolate’s smooth texture and glossy finish. That is what makes us unique.",
-      link: "https://www.chocolate.lindt.com/world-of-lindt/the-lindt-difference",
-      buttonText: "READ MORE",
-    },
+    // {
+    //   image: "https://www.chocolate.lindt.com/media/wysiwyg/Praline1440x800_2.jpg",
+    //   heading: "What is The Lindt Difference?",
+    //   content: "A combination of the highest quality ingredients, unrivalled care and unparalleled skill that goes into crafting each chocolate, and – most importantly – our chocolate’s smooth texture and glossy finish. That is what makes us unique.",
+    //   link: "https://www.chocolate.lindt.com/world-of-lindt/the-lindt-difference",
+    //   buttonText: "READ MORE",
+    // },
   ];
 
   const settings = {

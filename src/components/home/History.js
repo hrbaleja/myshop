@@ -15,7 +15,7 @@ const History = () => {
           <Card>
             <CardMedia
               component="img"
-              alt="A mother and her children enjoying Lindt."
+              alt="chocolate Image"
               height="360"
               image="https://www.chocolate.lindt.com/media/wysiwyg/Mother-and-Children-720x460.jpg"
             />
