@@ -11,13 +11,13 @@ import he2 from '../Images/Three.jpg'
 
 const Carousel = () => {
   const slides = [
-    {
-      image: he,
-    //   heading: "OUR CHRISTMAS SELECTION",
-    //   content: "Discover all the creations of our Master Chocolatiers for this Christmas. Created to delight your beloved. Discover the perfect gifts for every occasion.",
-    //   link: "https://www.chocolate.lindt.com/christmas",
-    //   buttonText: "DISCOVER",
-    },
+    // {
+    //   image: he,
+    // //   heading: "OUR CHRISTMAS SELECTION",
+    // //   content: "Discover all the creations of our Master Chocolatiers for this Christmas. Created to delight your beloved. Discover the perfect gifts for every occasion.",
+    // //   link: "https://www.chocolate.lindt.com/christmas",
+    // //   buttonText: "DISCOVER",
+    // },
     {
       image: "https://cdn.britannica.com/60/190360-050-0A5E06CB/Cocoa-powder-cocoa-beans.jpg",
       heading: "EXCELLENCE COCOA PURE",
